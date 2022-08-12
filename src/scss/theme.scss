@@ -1,0 +1,153 @@
+$url_bg_img_left: '../img/bg-beach-sea.png';
+$url_bg_img_rigth: '../img/bg-continents.png';
+$url_bg_menu_item: '../img/bg-menu-item.png';
+
+@mixin bg-img($url, $size, $position, $repeat: no-repeat) {
+    background-image: url($url);
+    background-repeat: $repeat;
+    background-position: $position;
+    background-size: $size;
+}
+
+.main-container{
+    height: 100vh;    
+
+    .bg-image-left{
+        @include bg-img($url: $url_bg_img_left, $size: cover, $position: center, $repeat: repeat);
+        height: 100%;
+        overflow-y: auto;
+
+        .user-card{
+            background-color: transparent;
+            border: none;
+            height: 75%;
+            width: 80%;
+        
+            .logo-user{
+                height: 25%;
+                width: 48%;
+                position: relative;
+                top: 12.5%;
+                left: 27.5%;
+                padding-bottom: 5%;
+            }
+        
+            .user-card-body{
+                background: #42607CBF;
+                box-shadow: 8px 1px 13px rgba(0, 0, 0, 0.25);
+                border-radius: 19px;
+                color: #ffffff;
+                height: auto;
+
+                .user-content{
+                    .div-config{
+                        margin-top: 22.5%;
+                        padding-bottom: 15%;
+                    }
+
+                    .div-bienvenida{
+                        padding-bottom: 10%;
+                    }
+
+                    .div-language{
+                        padding-bottom: 15%;
+                    }
+
+                    .div-button{
+                        padding-bottom: 15%;
+                    }
+
+                    .bienvenida{
+                        font-family: 'Montserrat';
+                        font-style: normal;
+                        font-weight: 700;
+                        font-size: 120%;
+                        line-height: 24px;
+                        text-align: center;
+                        letter-spacing: 0.1em;
+                        text-transform: uppercase;
+    
+                        color: #FFFFFF;
+                    }
+
+                    .active-language{
+                        color: #D8BC8B;
+                    }
+
+                    .btn-outline-light{
+                        border-color: transparent;
+                        padding: 0 3px;
+                    }
+    
+                    .btn-sign{
+                        color: #FFFFFF;
+                        border-color: #ffffff;
+                        border-radius: 30px;
+                    }
+    
+                    .time-date{
+                        .time{
+                            font-size: 250%;
+                        }
+                    }
+                }
+            }
+        }
+    }    
+
+    .bg-image-right{
+        @include bg-img($url: $url_bg_img_rigth, $size: 130% 85%, $position: right);
+        overflow-y: auto;
+        .content-right{
+            margin: 5% 12% 0% 12%;          
+
+            .title{
+                /* Logo */
+                font-family: 'Montserrat';
+                font-weight: bold;
+                font-size: 3vh;
+                text-align: center;
+                letter-spacing: 0.1em;
+                text-transform: uppercase;
+                color: #1E1E1E;
+            }
+
+            .div-menu-item{
+                /* padding: 5% 3% 0% 0%; */
+                padding-top: 5%;
+
+                .menu-item-card{
+                    width: 95%;
+                    height: 30vh;
+
+                    box-sizing: border-box;
+
+                    background: #FFFFFF;
+                    border: 1px solid #FFFFFF;
+                    box-shadow: 7px 2px 11px rgba(0, 0, 0, 0.25);
+                    border-radius: 30px;
+
+                    .user-card-body{
+                        margin-bottom: 2%;
+                        height: 100%;
+
+                        .bg-menu-item{
+                            @include bg-img($url: $url_bg_menu_item, $size: 65%, $position: center);
+                            width: 70%;
+                            height: 85%;
+
+                            img{
+                                padding-top: 1em;
+                                width: 50%;
+                                height: 85%;
+                            }
+                        }
+                        .text-item{
+                            font-size: 90%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
