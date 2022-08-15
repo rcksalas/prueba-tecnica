@@ -4,7 +4,7 @@ const english = {
     'button_msg': 'SIGN OUT',
     'menu_item': 'POINT',
     'meses': ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
-    'dias_semana': ['Sunday', 'Monday', 'Thuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+    'dias_semana': ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
 };
 
 const spanish = {
