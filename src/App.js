@@ -5,11 +5,14 @@ import {english, spanish} from './text/languages'
 function App() {
   const items = [1, 2, 3, 4, 5, 6];
 
-  const [fecha, setFecha] = React.useState('');
   const [hora, setHora] = React.useState('');
   const [idioma, setIdioma] = React.useState(false);
   const [textos, setTextos] = React.useState(english);
-  React.useEffect(() => {
+  const [dia_semana, setDiaSemana] = React.useState(0);
+  const [dia_mes, setDiaMes] = React.useState(0);
+  const [mes, setMes] = React.useState(0);
+
+  React.useEffect(() => {    
     const regresaDosDigitos = (valor) => {
       return valor<=9?'0'+valor:valor;
     };
@@ -20,18 +23,17 @@ function App() {
       const minutos = regresaDosDigitos(date.getMinutes());
       //const segundos = regresaDosDigitos(date.getSeconds()); por si se requieren segundos
 
-      const dia_semana = textos.dias_semana[date.getDay()];
-      const mes = textos.meses[date.getMonth()];
-      const diaMes = date.getDate();
+      setDiaSemana(date.getDay());
+      setMes(date.getMonth());
+      setDiaMes(date.getDate());
 
       setHora(horas+":"+minutos);
-      setFecha(dia_semana+','+diaMes+' '+mes);
     };
 
     setInterval(actualizaHoraFecha,500);
-  }, [textos]);
+  }, []);
 
-  const cambiaIdioma = (valor) => {
+  const cambiaIdioma = async (valor) => {
     setIdioma(valor);
     setTextos(valor?spanish:english);
   };
@@ -58,7 +60,7 @@ function App() {
                 </div>
                 <div className="row time-date text-center div-date">
                   <span className="time">{hora}</span>
-                  <span className="date">{fecha}</span>
+                  <span className="date">{textos.dias_semana[dia_semana]},{dia_mes} {textos.meses[mes]}</span>
                 </div>
               </div>
             </div>
