@@ -9,8 +9,8 @@ const english = {
 
 const spanish = {
     'config': 'Ajustes',
-    'bienvenida': 'Bienvenidos',
-    'button_msg': 'Salir',
+    'bienvenida': 'BIENVENIDOS',
+    'button_msg': 'SALIR',
     'menu_item': 'PUNTO',
     'meses': ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
     'dias_semana': ['Domingo', 'Lunes', 'martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado']
